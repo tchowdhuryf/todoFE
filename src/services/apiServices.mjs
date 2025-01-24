@@ -1,14 +1,14 @@
-import axios from 'axios';
+import axios from "axios";
 
 export const ACTIONS = {
-  create: 'create',
-  read: 'read',
-  update: 'update',
-  delete: 'delete',
+  create: "create",
+  read: "read",
+  update: "update",
+  delete: "delete",
 };
 
 export default async function serviceCall(action, formData, id) {
-  const url = 'http://localhost:3001/api/todos';
+  const url = "https://todobe-uk9e.onrender.com/api/todos";
 
   switch (action) {
     case ACTIONS.create:
@@ -35,7 +35,7 @@ async function getTodos(url) {
 async function createTodo(url, formData) {
   try {
     const res = await axios.post(url, formData);
-    
+
     return res.data;
   } catch (err) {
     console.error(err);
